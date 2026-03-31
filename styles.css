@@ -271,6 +271,23 @@ body.expanding .scene-shell {
     radial-gradient(circle at 80% 100%, rgba(33, 57, 29, 0.5) 0 24%, transparent 25%);
 }
 
+.window-view::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.22) 0 8%, transparent 9%),
+    radial-gradient(circle at 74% 68%, rgba(255, 255, 255, 0.14) 0 7%, transparent 8%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0 6px,
+      rgba(255, 255, 255, 0) 6px 12px
+    ),
+    linear-gradient(180deg, #b0b0b0 0%, #8f8f8f 100%);
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
 .window-ben {
   position: absolute;
   left: 50%;
@@ -279,6 +296,7 @@ body.expanding .scene-shell {
   max-width: none;
   transform: translateX(-50%);
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+  transition: filter 400ms ease, opacity 400ms ease;
 }
 
 .door-knob {
@@ -316,6 +334,19 @@ body.entry-opening .door-light,
 body.expanding .door-light {
   opacity: 0;
   transform: scale(1.12);
+}
+
+body.entry-opening .window-view::after,
+body.expanding .window-view::after,
+body.site-entered .window-view::after {
+  opacity: 1;
+}
+
+body.entry-opening .window-ben,
+body.expanding .window-ben,
+body.site-entered .window-ben {
+  opacity: 0;
+  filter: grayscale(1) brightness(0.72);
 }
 
 @media (max-width: 960px) {
