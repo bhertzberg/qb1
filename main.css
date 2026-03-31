@@ -1,0 +1,131 @@
+.main-view {
+  --bg: #f4ede0;
+  --panel: rgba(255, 249, 241, 0.88);
+  --text: #24301f;
+  --muted: #5f6958;
+  --line: rgba(73, 81, 59, 0.12);
+  --secondary: #a16a3a;
+  --shadow: 0 24px 60px rgba(54, 49, 33, 0.12);
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 32%),
+    linear-gradient(180deg, #e4d0b2 0%, var(--bg) 42%, #d7bf98 100%);
+}
+
+.main-view .page-shell {
+  width: min(1120px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+.main-view .hero-card,
+.main-view .panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.main-view .hero-card {
+  border-radius: 32px;
+  padding: 28px;
+  margin-bottom: 18px;
+}
+
+.main-view .eyebrow {
+  margin: 0 0 10px;
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.main-view h1,
+.main-view h2 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.main-view h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+}
+
+.main-view h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.main-view .hero-copy,
+.main-view .panel p,
+.main-view .link-list li {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.main-view .grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 18px;
+}
+
+.main-view .panel {
+  border-radius: 28px;
+  padding: 24px;
+}
+
+.main-view .detail-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.main-view .detail-list div,
+.main-view .link-list li {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 252, 246, 0.72);
+  padding: 16px;
+}
+
+.main-view .detail-list span {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.main-view .detail-list strong {
+  display: block;
+}
+
+.main-view .link-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .main-view .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-view .page-shell {
+    width: min(100% - 16px, 100%);
+    padding-top: 16px;
+  }
+
+  .main-view .hero-card,
+  .main-view .panel {
+    padding: 18px;
+    border-radius: 24px;
+  }
+}
