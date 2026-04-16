@@ -68,8 +68,12 @@
 
 .main-view .grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
+}
+
+.main-view .panel--full {
+  grid-column: 1 / -1;
 }
 
 .main-view .panel {
@@ -109,6 +113,27 @@
   margin: 18px 0 0;
   display: grid;
   gap: 14px;
+}
+
+.main-view .panel a {
+  color: var(--secondary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.main-view .panel a:hover {
+  color: var(--text);
+}
+
+.main-view .link-list--albums li p {
+  margin: 10px 0 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
 @media (max-width: 900px) {
