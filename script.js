@@ -26,5 +26,8 @@ enterSite?.addEventListener("click", () => {
     body.classList.add("show-main");
     isOpening = false;
     document.body.style.overflow = "auto";
+    try {
+      sessionStorage.setItem("qb1-bypass-home-intro", "1");
+    } catch (e) {}
   }, 3000);
 });

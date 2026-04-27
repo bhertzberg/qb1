@@ -15,17 +15,70 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20260330-7" />
-    <link rel="stylesheet" href="main.css?v=20260413-1" />
+    <link rel="stylesheet" href="main.css?v=20260414-1" />
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          if (sessionStorage.getItem("qb1-bypass-home-intro") === "1") {
+            document.body.classList.add("show-main", "site-entered");
+            document.body.style.overflow = "auto";
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div class="main-view intro-destination" id="mainView">
+      <div class="nav-chrome">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="site-drawer"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="nav-backdrop" hidden aria-hidden="true"></div>
+      <aside
+        id="site-drawer"
+        class="nav-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="nav-drawer-head">
+          <span class="nav-drawer-title">Menu</span>
+          <button class="nav-drawer-close" type="button" aria-label="Close menu">×</button>
+        </div>
+        <nav class="nav-drawer-nav" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Invite</a>
+          <a href="invitees.html">Voices</a>
+          <a href="history.html">The Land</a>
+          <a href="photos.html">Photos</a>
+        </nav>
+      </aside>
+
       <main class="page-shell">
+        <header class="site-top-bar">
+          <a class="site-top-brand" href="index.html">Quarter Bentury</a>
+          <nav class="site-top-links" aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Invite</a>
+            <a href="invitees.html">Voices</a>
+            <a href="history.html">The Land</a>
+            <a href="photos.html">Photos</a>
+          </nav>
+        </header>
         <section class="hero-card">
           <!-- <p class="eyebrow">You are invited to the </p> -->
           <h1>Quarter Bentury at The Land</h1>
           <p class="hero-copy">
             Come celebrate my 25th birthday in the Santa Cruz Mountains! This year, my birthday falls on a 3 day weekend - also happy Juneteenth everyone - and I'm inviting all my friends to go camping at a big deck in the woods. 
-            This website is meant to brush aside the mundanity of another Partiful blast and invoke a feeling of awe in all invitees such that they can't help but be compelled to participate.
+            This website is meant to brush aside the mundanity of another Partiful blast and invoke a feeling of awe in all invitees.
           </p>
         </section>
 
@@ -34,7 +87,7 @@
             <p class="eyebrow">Formal invite</p>
             <h2>Quick Info</h2>
             <p>
-              I'm hoping to gather all my friends at this incredible spot in the woods and spend a few days playing games, jamming out, tossing dice, walking creeks, and eating good. Not much of a strict itinerary but if you have any suggestions let me know!           </p>
+              I'm hoping to gather all my friends in the woods and spend a few days playing games, jamming out, tossing dice, walking creeks, hacking sack, and eating. Not much of a strict itinerary but if you have any suggestions let me know.           </p>
             <div class="detail-list">
               <div>
                 <span>Date</span>
@@ -47,6 +100,14 @@
               <div>
                 <span>Getting There</span>
                 <strong>The deck is in a gated community the end of a long dirt with no cell service. You'll be fine, don't worry.</strong>
+              </div>
+              <div>
+                <span>Gate Code</span>
+                <strong> # 1 0 3 4</strong>
+              </div>
+              <div>
+                <span>Driving In</span>
+                <strong>The last few miles are on a narrow dirt road. Drive slow and watch for cars coming the other way.</strong>
               </div>
               <div>
                 <span>Connection</span>
@@ -143,6 +204,7 @@
     </main>
 
     <audio id="doorYes" preload="auto" src="yes.mp3"></audio>
+    <script src="nav.js?v=20260413-2"></script>
     <script src="script.js?v=20260330-8"></script>
   </body>
 </html>
