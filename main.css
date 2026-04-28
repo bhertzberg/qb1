@@ -38,6 +38,11 @@ body.show-main.nav-drawer-open {
   padding: 12px 0 40px;
 }
 
+/* Match hero → first panel spacing (18px) when multiple panels stack in the shell */
+.main-view .page-shell > .panel + .panel {
+  margin-top: 18px;
+}
+
 .main-view .hero-card,
 .main-view .panel {
   border: 1px solid var(--line);
@@ -418,33 +423,157 @@ body.show-main.nav-drawer-open {
 }
 
 .invitee-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0 32px;
+  max-width: min(720px, 100%);
+  margin: 0 auto;
 }
 
-.invitee-card h2 {
-  margin-top: 16px;
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+.invitee-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(12px, 3vw, 22px);
+  max-width: 100%;
+}
+
+.invitee-card:nth-child(odd) {
+  align-self: flex-start;
+  flex-direction: row;
+  margin-right: clamp(0px, 6vw, 48px);
+}
+
+.invitee-card:nth-child(even) {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+  margin-left: clamp(0px, 6vw, 48px);
+  margin-top: clamp(1.85rem, 5.5vw, 3.25rem);
+}
+
+.invitee-card:nth-child(odd):nth-child(n + 3) {
+  margin-top: clamp(1.1rem, 3.2vw, 2.1rem);
+}
+
+.invitee-card:nth-child(1) {
+  margin-top: 0;
+}
+
+.invitee-avatar-wrap {
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .invitee-photo {
-  width: 100%;
-  aspect-ratio: 1;
+  width: clamp(184px, 48vw, 272px);
+  height: clamp(184px, 48vw, 272px);
   object-fit: cover;
-  border-radius: 20px;
-  border: 1px solid var(--line);
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 10px 28px rgba(54, 49, 33, 0.14);
   display: block;
 }
 
+.invitee-bubble {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px 16px;
+  border-radius: 22px;
+  background: rgba(255, 252, 246, 0.96);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* Speech-bubble tail toward the avatar */
+.invitee-card:nth-child(odd) .invitee-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border: 9px solid transparent;
+  border-right-color: var(--line);
+  border-left: 0;
+}
+
+.invitee-card:nth-child(odd) .invitee-bubble::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: rgba(255, 252, 246, 0.96);
+  border-left: 0;
+}
+
+.invitee-card:nth-child(even) .invitee-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -9px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border: 9px solid transparent;
+  border-left-color: var(--line);
+  border-right: 0;
+}
+
+.invitee-card:nth-child(even) .invitee-bubble::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: rgba(255, 252, 246, 0.96);
+  border-right: 0;
+}
+
+.invitee-card .invitee-bubble h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.05rem, 2.8vw, 1.4rem);
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
 .invitee-quote {
-  margin: 12px 0 0;
+  margin: 0;
   padding: 0;
   border: none;
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: 0.96rem;
+  line-height: 1.58;
   color: var(--muted);
   font-style: italic;
+}
+
+@media (max-width: 520px) {
+  .invitee-grid {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .invitee-card:nth-child(odd) {
+    margin-right: clamp(0px, 3vw, 20px);
+  }
+
+  .invitee-card:nth-child(even) {
+    margin-left: clamp(0px, 3vw, 20px);
+  }
 }
 
 .history-body h2 {
@@ -537,8 +666,14 @@ body.show-main.nav-drawer-open {
 
 /* —— Carousel —— */
 
-.panel--carousel {
-  padding: 16px;
+/* Narrower carousel on larger screens: ~75% width so 1200px assets downscale and read sharper. */
+@media (min-width: 768px) {
+  .panel--carousel .carousel {
+    width: 75%;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .carousel-viewport {
