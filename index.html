@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20260330-7" />
-    <link rel="stylesheet" href="main.css?v=20260427-2" />
+    <link rel="stylesheet" href="main.css?v=20260428-16" />
   </head>
   <body>
     <script>
@@ -57,6 +57,7 @@
         </div>
         <nav class="nav-drawer-nav" aria-label="Main navigation">
           <a href="index.html" aria-current="page">Invite</a>
+          <a href="what-to-bring.html">What to Bring</a>
           <a href="invitees.html">Voices</a>
           <a href="history.html">The Land</a>
           <a href="photos.html">Photos</a>
@@ -69,6 +70,7 @@
           <a class="site-top-brand" href="index.html">Quarter Bentury</a>
           <nav class="site-top-links" aria-label="Main navigation">
             <a href="index.html" aria-current="page">Invite</a>
+            <a href="what-to-bring.html">What to Bring</a>
             <a href="invitees.html">Voices</a>
             <a href="history.html">The Land</a>
             <a href="photos.html">Photos</a>
@@ -85,7 +87,7 @@
         </section>
 
         <section class="grid">
-          <article class="panel">
+          <article class="panel panel--full">
             <p class="eyebrow">Formal invite</p>
             <h2>Quick Info</h2>
             <p>
@@ -100,20 +102,38 @@
                 <strong>300 Diablo Road, La Honda</strong>
               </div>
               <div>
+                <span>What to Bring</span>
+                <strong
+                  ><a
+                    class="checklist-link"
+                    href="what-to-bring.html"
+                    >Checklist</a
+                  ></strong
+                >
+              </div>
+              <div>
                 <span>Getting There</span>
-                <strong>The deck is in a gated community the end of a long dirt with no cell service. You'll be fine, don't worry.</strong>
+                <strong>The deck is in a gated community the end of a narrow dirt with no cell service. Drive slow and watch for cars coming the other way.</strong>
               </div>
               <div>
                 <span>Gate Code</span>
                 <strong> # 1 0 3 4</strong>
               </div>
               <div>
-                <span>Driving In</span>
-                <strong>The last few miles are on a narrow dirt road. Drive slow and watch for cars coming the other way.</strong>
-              </div>
-              <div>
                 <span>Connection</span>
                 <strong>No cell service. There is wifi and a landline at the house (1/4 mile from the deck).</strong>
+              </div>
+              <div>
+                <span>Sleeping Setup</span>
+                <strong>There are plenty of spots to set up a tent, or you can just rock a sleeping bag on the deck.</strong>
+              </div>
+              <div>
+                <span>Water</span>
+                <strong>There is running water at the deck for cooking and cleaning. It must be boiled or filtered before consuming - bring plenty of clean drinking water from home.</strong>
+              </div>
+              <div>
+                <span>Flying In?</span>
+                <strong>Message me for help getting rides and camping equipment.</strong>
               </div>
               <div>
                 <span>Any Questions? Text or Call:</span>
@@ -122,52 +142,21 @@
             </div>
           </article>
 
-          <article class="panel">
-            <h2 class="eyebrow">What to bring</h2>
-            <p>The Land has a good amount of supplies to support us. We will have speakers, lights, BBQs, pots/pans/dishes, running water (not potable), gas stoves, and rudimentary outhouses. Below is a list of things you will need to pack.</p>
-            <ul class="link-list">
-              <li>A tent, sleeping bag, and pillow</li>
-              <li>Sleeping pad or air mattress</li>
-              <li>Drinking Water</li>
-              <li>Food and drinks</li>
-              <li>A cooler for your food and drinks</li>
-              <li>Ice for your cooler for your food and drinks</li>
-              <li>3 days of clothes + outdoorsy shoes + flip flops</li>
-              <li>Toiletries</li>
-              <li>Instruments (bonus if you know how to play them)</li>
-              <li>Games to play</li>
-              <li>A book to read</li>
-              <li>Bathing suit and towel (for the creek)</li>
-              <li>Sunscreen and bug spray</li>
-            </ul>
-          </article>
-
-          <article class="panel panel--full">
-            <p class="eyebrow">Photo links</p>
-            <h2>Albums</h2>
-            <ul class="link-list link-list--albums">
-              <li>
-                <a
-                  href="https://photos.app.goo.gl/fQgkT5LSci4t2pbYA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Historic photos of The Land</a>
-                <p>
-                  Hand picked photos from past events at the property.
-                </p>
-              </li>
-              <li>
-                <a
-                  href="https://photos.app.goo.gl/rozMMEJNyHc1gnii9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Shared album — add your photos</a>
-                <p>
-                  Add your pictures from the weekend! Stick to a few favorites so the album doesn't
-                  blow up.
-                </p>
-              </li>
-            </ul>
+          <article
+            class="panel panel--full fire-safety-panel"
+            role="region"
+            aria-labelledby="fire-safety-heading"
+          >
+            <h2 id="fire-safety-heading">Fire safety</h2>
+            <div class="fire-safety-body">
+              <p>
+                Cooking fires and gear are available at the deck.
+              </p>
+              <p class="fire-safety-emphasis">
+                Please, <strong>under no circumstances</strong>, have fires or
+                smoking in any other area — the fire risk here is serious.
+              </p>
+            </div>
           </article>
         </section>
       </main>
@@ -204,7 +193,7 @@
     </main>
 
     <audio id="doorYes" preload="auto" src="yes.mp3"></audio>
-    <script src="nav.js?v=20260413-2"></script>
+    <script src="nav.js?v=20260428-2"></script>
     <script src="script.js?v=20260330-8"></script>
   </body>
 </html>
