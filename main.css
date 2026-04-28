@@ -150,6 +150,20 @@ body.show-main.nav-drawer-open {
   color: var(--text);
 }
 
+.main-view .detail-list .checklist-link {
+  color: #1565c0;
+  text-decoration-color: #1565c0;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-skip-ink: none;
+}
+
+.main-view .detail-list .checklist-link:hover,
+.main-view .detail-list .checklist-link:focus-visible {
+  color: #0d47a1;
+  text-decoration-color: #0d47a1;
+}
+
 .main-view .link-list--albums li p {
   margin: 10px 0 0;
   padding: 0;
@@ -749,4 +763,46 @@ body.show-main.nav-drawer-open {
 .carousel-dot.is-active {
   background: var(--secondary);
   transform: scale(1.15);
+}
+
+/* —— Home: fire safety —— */
+
+.fire-safety-panel {
+  border: 2px solid #c12c24;
+  background: linear-gradient(165deg, #fff2e8 0%, #ffcaba 48%, #ffe0d0 100%);
+  box-shadow:
+    0 4px 0 rgba(193, 44, 36, 0.12),
+    0 20px 40px rgba(193, 44, 36, 0.14);
+}
+
+.fire-safety-panel h2 {
+  margin: 0 0 14px;
+  color: #9a1f1a;
+  font-size: clamp(1.65rem, 4vw, 2.2rem);
+}
+
+.fire-safety-body {
+  margin: 0;
+}
+
+.fire-safety-body p {
+  margin: 0 0 12px;
+  color: #3d453a;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.fire-safety-body p:last-child {
+  margin-bottom: 0;
+}
+
+.fire-safety-emphasis {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid #c12c24;
+  background: linear-gradient(180deg, #ffffff 0%, #ffc8b8 100%);
+  color: #6a100c !important;
+  font-weight: 700 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
