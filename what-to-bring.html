@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20260330-7" />
-    <link rel="stylesheet" href="main.css?v=20260428-16" />
+    <link rel="stylesheet" href="main.css?v=20260429-4" />
   </head>
   <body class="sub-page">
     <script>
@@ -83,24 +83,122 @@
             pots/pans/dishes, running water (not potable), gas stoves, and rudimentary outhouses. Below is a
             list of things you will need to pack.
           </p>
-          <ul class="link-list">
-            <li>A tent, sleeping bag, and pillow</li>
-            <li>Sleeping pad or air mattress</li>
-            <li>Drinking Water</li>
-            <li>Food and drinks</li>
-            <li>A cooler for your food and drinks</li>
-            <li>Ice for your cooler for your food and drinks</li>
-            <li>3 days of clothes + outdoorsy shoes + flip flops</li>
-            <li>Toiletries</li>
-            <li>Instruments (bonus if you know how to play them)</li>
-            <li>Games to play</li>
-            <li>A book to read</li>
-            <li>Bathing suit and towel (for the creek)</li>
-            <li>Sunscreen and bug spray</li>
+          <ul class="link-list pack-checklist">
+            <li>
+              <label class="pack-checklist__row">
+                <input
+                  type="checkbox"
+                  class="pack-checklist__input"
+                  data-pack-key="tent"
+                />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Tent (optional)</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input
+                  type="checkbox"
+                  class="pack-checklist__input"
+                  data-pack-key="sleeping-bag-pad-pillow"
+                />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Sleeping bag, pad, and pillow</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="drinking-water" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Drinking water (2-3 liters per day)</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="food-drinks" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Food and drinks</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="cooler" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Cooler for your food and drinks</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="ice" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Ice for your cooler</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="clothes-shoes" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text"
+                  >3 days of clothes + outdoorsy shoes</span
+                >
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="toiletries" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Toiletries</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="instruments" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text"
+                  >Instruments (bonus if you know how to play them)</span
+                >
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="games" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Games to play</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="book" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">A book to read</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="bathing-suit" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Bathing suit, towel, flip flops (for the creek)</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="sunscreen-bug" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Sunscreen and bug spray</span>
+              </label>
+            </li>
+            <li>
+              <label class="pack-checklist__row">
+                <input type="checkbox" class="pack-checklist__input" data-pack-key="anything-else" />
+                <span class="pack-checklist__box" aria-hidden="true"></span>
+                <span class="pack-checklist__text">Anything else fun</span>
+              </label>
+            </li>
           </ul>
         </article>
       </main>
     </div>
     <script src="nav.js?v=20260428-2"></script>
+    <script src="pack-checklist.js?v=20260429-1"></script>
   </body>
 </html>
