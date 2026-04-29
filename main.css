@@ -57,6 +57,31 @@ body.show-main.nav-drawer-open {
   margin-bottom: 18px;
 }
 
+.main-view .page-shell > section.grid + .hero-card {
+  margin-top: 18px;
+}
+
+.main-view .hero-card a {
+  color: var(--secondary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.main-view .hero-card a:hover {
+  color: var(--text);
+}
+
+.main-view .hero-card__cta {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.main-view .hero-card .hero-copy + .hero-copy {
+  margin-top: 1.15em;
+}
+
 .main-view .eyebrow {
   margin: 0 0 10px;
   color: var(--secondary);
@@ -136,6 +161,95 @@ body.show-main.nav-drawer-open {
   margin: 18px 0 0;
   display: grid;
   gap: 14px;
+}
+
+/* —— Packing checklist (what-to-bring.html) —— */
+
+.main-view .link-list.pack-checklist li {
+  padding: 0;
+}
+
+.pack-checklist__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 0;
+  padding: 16px;
+  min-height: 48px;
+  cursor: pointer;
+  border-radius: 18px;
+  transition: background 0.15s ease;
+}
+
+.pack-checklist__row:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.pack-checklist__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pack-checklist__box {
+  flex: 0 0 auto;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  border: 2px solid rgba(73, 81, 59, 0.35);
+  border-radius: 7px;
+  background: rgba(255, 252, 246, 0.9);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.pack-checklist__input:focus-visible + .pack-checklist__box {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.pack-checklist__input:checked + .pack-checklist__box {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.pack-checklist__input:checked + .pack-checklist__box::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.pack-checklist__text {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.5;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.pack-checklist__row:has(.pack-checklist__input:checked) .pack-checklist__text {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  opacity: 0.88;
 }
 
 .main-view .panel a {
